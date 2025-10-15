@@ -57,19 +57,59 @@ function App() {
           const key = `open${Date.now()}`;
           message.open({
             content: (
-              <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                <div style={{ textAlign: "left", paddingLeft: 6 }}>
-                  收到转账: 来自 {formatAddress(from)}
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 8,
+                }}
+              >
+                <div
+                  style={{
+                    textAlign: "left",
+                    paddingLeft: 12,
+                    flex: 1,
+                    fontSize: 20,
+                  }}
+                >
+                  <span
+                    style={{
+                      fontWeight: "bold",
+                    }}
+                  >
+                    收到转账:{" "}
+                  </span>
+                  来自 {formatAddress(from)}
                   <br />
-                  数量: <span style={{ color: "red" }}>
-                    ${Number(value)}
+                  <span
+                    style={{
+                      fontWeight: "bold",
+                    }}
+                  >
+                    数量:
                   </span>{" "}
-                  元豆
+                  <span style={{ color: "red" }}>${Number(value)}</span> 元豆
+                  <br />
+                  <span
+                    style={{
+                      fontWeight: "bold",
+                    }}
+                  >
+                    时间:{" "}
+                  </span>
+                  {new Date().toLocaleString()}
                 </div>
-                <CloseCircleOutlined onClick={() => message.destroy(key)} />
+                <CloseCircleOutlined
+                  style={{
+                    fontSize: 30,
+                    color: "red",
+                  }}
+                  onClick={() => message.destroy(key)}
+                />
               </div>
             ),
-            icon: "💰",
+
+            icon: <div style={{ fontSize: 20 }}>💰</div>,
             duration: 0,
             key,
           });

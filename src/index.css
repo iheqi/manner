@@ -71,3 +71,11 @@ button:focus-visible {
 .ant-message-success {
   word-break: break-all;
 }
+
+.ant-message-notice-content {
+  width: 100%;
+}
+
+.ant-message-custom-content > span {
+  flex: 1;
+}
